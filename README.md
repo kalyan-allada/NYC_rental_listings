@@ -15,7 +15,7 @@ The goal of this project is to predict the number of inquiries a new rental list
 - **predictions_rfc.csv** : Output file with predictions (RFC)
 - **predictions_xgb.csv** : Output file with predictions (XGB)
 - **README.md** : You are reading this file
-- **requirements** :  A text file of required python modules
+- **requirements.txt** :  A text file of required python modules
 - **data** : This is the data folder, not included here. The data can be downloaded from this [link](https://www.kaggle.com/c/two-sigma-connect-rental-listing-inquiries/data). A description of the data fields are also present at this link.
 
 ### Discussion/Summary
