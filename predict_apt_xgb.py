@@ -1,5 +1,4 @@
 # -*- coding: utf-8 -*-
-#This script is a modified version of a starter code provided by kaggle user SRK
 import numpy as np
 import pandas as pd
 from scipy import sparse
@@ -107,7 +106,7 @@ target_num_map = {'high':0, 'medium':1, 'low':2}
 train_y = np.array(train_df['interest_level'].apply(lambda x: target_num_map[x]))
 print(train_X.shape, test_X.shape)
 
-# comment this part once validation is done and num_round has been optimized
+#Comment this part once validation is done and num_round has been optimized
 #cv_scores = []
 #kf = model_selection.KFold(n_splits=5, shuffle=True, random_state=1000)
 #for dev_index, val_index in kf.split(range(train_X.shape[0])):
