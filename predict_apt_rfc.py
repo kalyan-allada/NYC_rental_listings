@@ -59,19 +59,21 @@ X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.3, random_st
 # We will use RFC (best parameters can be found from grid search below)
 clf = RandomForestClassifier(n_estimators=1000, n_jobs=-1, max_features='sqrt', min_samples_split=5)
 
-#Lets do grid search 
-#comment this section after finding best parameters
-#params = dict(random_forest__n_estimators=[100, 1000, 2000],
+# we will use pipelines to do the fitting and prediction..
+# ..we can add more steps if necessary
+steps = [('random_forest', clf)]
+pipe_rfc = pl.Pipeline(steps)
+
+# parameter grid search
+#params = dict(random_forest__n_estimators=[1000, 1500, 2000],
 #              random_forest__min_samples_split=[5, 6, 7],
 #              random_forest__max_features=['sqrt', 'log2'])
-#cv_rfc = GridSearchCV(clf, param_grid=params, n_jobs=1, cv=5)
+#cv_rfc = GridSearchCV(pipe_rfc, param_grid=params, n_jobs=1, cv=3)
 #cv_rfc.fit(X_train, y_train)
 #print cv_rfc.best_params_
 
-#We will use pipelines to do fitting and prediction
-#so that we can add more steps if necessary
-steps = [('random_forest', clf)]
-pipe_rfc = pl.Pipeline(steps)
+
+# fit train set and make prediction on validation set
 pipe_rfc.fit(X_train, y_train)
 y_val_pred = pipe_rfc.predict_proba(X_val)
 print("Log loss for validation set: " + str(log_loss(y_val, y_val_pred)))
