@@ -14,9 +14,9 @@ import sklearn.pipeline as pl
 from sklearn import linear_model
 
 # Read json files
-train_df = pd.read_json(open("train.json", "r"))
+train_df = pd.read_json(open("data/train.json", "r"))
 print(train_df.shape)
-test_df = pd.read_json(open("test.json", "r"))
+test_df = pd.read_json(open("data/test.json", "r"))
 print(test_df.shape)
 
 # Feature engineering
