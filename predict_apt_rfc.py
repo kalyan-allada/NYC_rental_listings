@@ -137,4 +137,3 @@ for label in ["high", "medium", "low"]:
     pred_df[label] = pred_prob[:, label_id[label]]
 pred_df.to_csv("predictions_rfc.csv", index=False)
 
-#public LB: 0.58066
