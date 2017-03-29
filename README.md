@@ -28,3 +28,4 @@ We built two models to predict customer interest level for every rental listing 
 
 We conclude that XGBoost gives more accurate predictions than random forest classifier in this case. A log loss of 0.5445 was acheived using this model. The advantage of XGBoost is that it is faster to run and do not need any special treatment such as taking care of outliers or scaling features. The disadvantage is that it has lot of parameters that can be tweaked. 
 
+The prediction we made for every new rental listing can be use by the rental company to better handle fraud control, identify potential listing quality issues, and allow owners and agents to better understand renters’ needs and preferences.
